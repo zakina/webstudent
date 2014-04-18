@@ -1,0 +1,45 @@
+{# src/webStudent/EtudiantBundle/Resources/views/Etudiant/etudiantAjouter.html.twig #}
+{% extends "webStudentEtudiantBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} PAGE D'ACCUEIL : affichage des périodes de stage à venir{% endblock %}
+ 
+{% block body %}
+  
+<h3>FORMULAIRE ETUDIANT</h3>
+
+ 
+<div >
+  <form class="form-inline" method="post" {{ form_enctype(form) }}> 
+	{% form_theme form 'webStudentEtudiantBundle:Form:fields.html.twig' %}
+	
+	{{ form_widget(form) }} 	 
+	{{ form_errors(form) }}	
+	
+<div>
+  {# Génération du label. #}
+  {{ form_label(form.nom, "Nom étudiant ") }}
+  
+  {# Affichage des erreurs pour ce champ précis. #}
+  {#{{ form_errors(form.nom) }} #}
+ 
+  {# Génération de l'input. #}
+  {{ form_widget(form.nom) }} 
+  
+  {# Génération du label. #}
+  {# {{ form_label(form.prenom, "preNom éudiant") }} #}
+ 
+  {# Affichage des erreurs pour ce champ précis. #}
+  {#{{ form_errors(form.prenom) }} #}
+ 
+  {# Génération de l'input. #}
+  {#{{ form_widget(form.prenom) } #}
+
+</div>
+		
+		{#{{ form_rest(form) }}#}
+		
+		<input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+Stage_ajouter:
+    path:      stage/ajouter
+    defaults:  { _controller: webStudentStageBundle:Stage:stageAjouter }
+web_student_stage_homepage:
+    pattern:  /stageTest/{name}
+    defaults: { _controller: webStudentStageBundle:Default:index }

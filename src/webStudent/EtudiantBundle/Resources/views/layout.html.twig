@@ -1,0 +1,94 @@
+{# src/webStudent/EtudiantBundle/Resources/views/layout.html.twig #}
+ 
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+    <title>{% block title %}WEBSTUDENT{% endblock %}</title>
+	 {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+	  <link rel="stylesheet" href="{{ asset('css/webstudent.css') }}" type="text/css" />
+    {% endblock %}
+  </head>
+
+<header>
+	<div class="row">
+	<div class="span3"></div>
+	<div class="span9"><img alt="Lycée Jean Rostand" src="{{ asset('img/banniere_ljr.jpg') }}"/></div>
+	</div>
+	
+	
+	<div class="row">
+	<div class="span3"></div>
+	<div class="span9"> <h4>BIENVENUE SUR LE SITE WEB DES ETUDIANTS DU LYCEE JEAN ROSTAND</h4></div>
+	</div>
+	
+	
+<div class="row">
+<div class="span3"></div>
+<div class="span9">
+	
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <li> <a href="#">Accueil</a> </li>
+        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Etudiant <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost/Symfony/web/app_dev.php/etudiant/rechercher">Rechercher</a></li>
+            <li><a href="http://localhost/Symfony/web/app_dev.php/etudiant/ajouter">Ajouter</a></li>
+           
+
+          </ul>
+        </li>
+         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Stage <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Rechercher</a></li>
+            <li><a href="#">Ajouter</a></li>
+            <li><a href="#">Modifier</a></li>
+
+          </ul>
+        </li>
+		
+		 <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Entreprise <b class="caret"></b> </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Rechercher</a></li>
+            <li><a href="#">Ajouter</a></li>
+            <li><a href="#">Modifier</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-search pull-right" action="">
+        <input class="search-query" type="text" placeholder="Recherche">
+      </form>
+    </div>
+  </div>
+</div>	
+	
+</div>
+	
+	</div>	
+	
+	
+	
+</header>
+ 
+   
+	  <body>
+	   <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+	   <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+		 
+		 <div class="row">
+<div class="span3"></div>
+<div class="span9">
+		 {% block body %}
+		 {% endblock %}
+		 </div>
+		 </div>
+		
+	  </body>
+   
+
+</html>

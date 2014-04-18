@@ -1,0 +1,30 @@
+{# src/webStudent/EtudiantBundle/Resources/views/Etudiant/etudiantConsulter.html.twig #}
+{% extends "webStudentEtudiantBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} PAGE D'ACCUEIL : affichage des périodes de stage à venir{% endblock %}
+{% block javascripts %}
+{% endblock %}
+{% block body %}
+
+
+ <h5>PAGE DE CONSULTATION D'UN ETUDIANT</h5>
+ <p>
+  <table class="table table-bordered table-striped table-condensed">
+     <tr><td>Id : </td><td>{{etudiant.id}} </td></tr>
+	<tr><td>Nom : </td><td>{{etudiant.nom}}</td>
+	<td  rowspan="8" class="imgEtu">
+					{% set photo = 'img/etudiant/'~ etudiant.id ~'.jpg' %}
+					<span class="zoom"><img src="{{ asset(photo | trans )}}" title="{{ etudiant.prenom ~ " " ~ etudiant.nom }}" alt="{{ etudiant.prenom ~ " " ~ etudiant.nom }}"/></span></td></tr> </td>
+    <tr><td>Prénom : </td><td>{{etudiant.prenom}}</td></tr></tr>
+	
+       <tr><td>Date de naissance : </td><td>{{etudiant.dateNaissance|date("d/m/Y")}}</td></tr>
+	  <tr><td>adresse mail </td><td>{{etudiant.adrMail}}</td></tr>
+	  <tr><td>Téléphone </td><td>{{etudiant.telephone}}</td></tr>
+	  <tr><td>Section </td><td>{{etudiant.section.nom}}</td></tr>
+	  <tr><td>Année </td><td>{{etudiant.niveau.libelle}}</td></tr>
+	  <tr><td>Promotion </td><td>{{etudiant.promo.annee}}</td></tr>
+ </table>
+	
+	
+ 
+ {% endblock %}

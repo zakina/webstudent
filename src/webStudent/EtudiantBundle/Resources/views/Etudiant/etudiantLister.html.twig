@@ -1,0 +1,33 @@
+{% block content %}
+
+<form id="form_recherche" action="{{ path('Etudiant_rechercher') }}" method="post">
+    {{ form_widget(form) }}
+    <input type="submit" value="Rechercher" />
+</form>
+<div class="loading"></div>
+<div id="resultats_recherche"> 
+    {% include 'webStudentEtudiantBundle:Etudiant:liste.html.twig' with {'listeEtudiant' : listeEtudiant}  %}
+</div>
+
+<p><a href="{{ path('Etudiant_ajouter') }}">Ajouter un étudiant</a><p>
+
+<script>
+$(".loading").hide();
+$("#form_recherche").submit(function(){ 
+    $(".loading").show();
+    var nom = $("#etudiantrecherche_nom").val();
+    var DATA = 'nom=' + nom;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('Etudiant_rechercher')}}",
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#resultats_recherche').html(data);
+           $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>
+{% endblock %}

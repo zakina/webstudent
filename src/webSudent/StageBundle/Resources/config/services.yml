@@ -1,0 +1,7 @@
+parameters:
+#    web_sudent_stage.example.class: webSudent\StageBundle\Example
+
+services:
+#    web_sudent_stage.example:
+#        class: %web_sudent_stage.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

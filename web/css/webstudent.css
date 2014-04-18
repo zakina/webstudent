@@ -1,0 +1,34 @@
+
+.zoom {
+height:400px;
+}
+.zoom p {
+text-align:center;
+}
+.zoom img {
+width:120px;
+height:160px;
+
+}
+.zoom img:hover {
+width:180px;
+height:240px;
+}
+
+td[rowspan] {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/*
+[class*="span"] {
+ background-color: lightgreen;
+ margin-bottom: 2px;
+ border-radius: 1px 1px 1px 1px;
+ line-height: 40px;
+ text-align: center;
+}
+[class="span10"] {
+ background-color: green;
+}
+*/

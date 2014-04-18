@@ -1,0 +1,27 @@
+{# src/webStudent/EtudiantBundle/Resources/views/Etudiant/listeEtudiant.html.twig #}
+{% extends "webStudentEtudiantBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} PAGE D'ACCUEIL : affichage des périodes de stage à venir{% endblock %}
+ 
+{% block body %}
+  
+<h3>LISTE DES ETUDIANTS RECHERCHES</h3>
+<table class="table table-bordered table-striped table-condensed">
+{% for a in listeEtudiant %}
+    <tr>
+	<td><a href="{{ path('Etudiant_consulter', { 'id': a.id }) }}">{{ a.nom }}</a></td>
+	<td><a href="{{ path('Etudiant_consulter', { 'id': a.id }) }}">{{ a.prenom }}</a></td>
+	<td>{{ a.dateNaissance|date('d/m/Y') }}</td>
+	<td>{{ a.adrMail}}</td>
+	<td>{{ a.section.code}} - {{ a.niveau.id}} </td>
+	<td>{{ a.promo.annee}}</td>
+	<td> <a href="{{ path('Etudiant_modifier', { 'id': a.id }) }}"> <img src=" {{ asset('img/crayon.png') }} "> </a></td>
+{% else %}
+    <tr>
+	<td>Aucun etudiant n'a été trouvé.</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

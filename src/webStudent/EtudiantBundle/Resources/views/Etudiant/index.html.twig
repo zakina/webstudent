@@ -1,0 +1,50 @@
+{# src/webStudent/EtudiantBundle/Resources/views/Etudiant/index.html.twig #}
+{% extends "webStudentEtudiantBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} PAGE D'ACCUEIL : affichage des périodes de stage à venir{% endblock %}
+ 
+{% block body %}
+  
+ Date d'aujourd'hui : {{ "now"|date('d/m/Y') }}
+ Annee d'aujourd'hui : {{ "now"|date('Y') }}
+ 
+{# -----  {%set annee = "now"|date('Y') %}     --------------- #}
+{# -----  {%set dateCompar = annee+1 ~'-09-01' %} --------------- #}
+{# -----  date calculee = {{dateCompar}} --------------- #}
+ 
+ {# LA COMPARAISON SUR LES DATES NE FONCTIONNE PAS #}
+ {# LA COMPARAISON SUR LES DATES NE FONCTIONNE PAS #}
+ {# LA COMPARAISON SUR LES DATES NE FONCTIONNE PAS #}
+ {# LA COMPARAISON SUR LES DATES NE FONCTIONNE PAS #}
+ 
+ <table class="table table-bordered table-striped table-condensed">
+ <tr>
+			<td>id</td>
+			<td>Section</td>
+			<td>Année</td>
+			<td>Date de debut</td>
+			<td>Date de fin</td>
+			<td>Nb de semaines</td>
+		</tr>
+	{% for periode in listePeriodeStage %}
+		{# {% if periode.DateDebut|date('d/m/Y') > dateCompar|date('d/m/Y')%}  #}
+			<tr>
+			<td>{{periode.id }}</td>
+			<td>{{periode.section.nom }}</td>
+			<td>{{periode.niveau.id}}</td>
+			<td>{{ periode.DateDebut|date('d/m/Y') }}</td>
+			<td>{{ periode.DateFin|date('d/m/Y') }}</td>
+			<td>{{ periode.nbSemaines }}</td>
+			</tr>
+		{# {% endif %} #}
+	{% endfor %}
+
+</table>
+ 
+ 
+ 
+
+ </p>
+{% endblock %}
+
+

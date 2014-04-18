@@ -1,0 +1,97 @@
+<?php
+
+namespace webStudent\EtudiantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use webStudent\EtudiantBundle\Entity\PeriodeStage;
+use webStudent\EtudiantBundle\Entity\Etudiant;
+
+/**
+ * Promo
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="webStudent\EtudiantBundle\Entity\PromoRepository")
+ */
+class Promo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="annee", type="string", length=9)
+     */
+    private $annee;
+
+
+	/**
+	* @ORM\OneToMany(targetEntity="webStudent\EtudiantBundle\Entity\Etudiant", mappedBy="etudiant")
+	* @ORM\JoinColumn(nullable=false)
+	*/
+	private $etudiants;
+	
+	
+	
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param string $annee
+     * @return Promo
+     */
+    public function setAnnee($annee)
+    {
+        $this->annee = $annee;
+    
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return string 
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
+    }
+
+    /**
+     * Set etudiant
+     *
+     * @param \webStudent\EtudiantBundle\Entity\Etudiant $etudiant
+     * @return Promo
+     */
+    public function setEtudiant(\webStudent\EtudiantBundle\Entity\Etudiant $etudiant)
+    {
+        $this->etudiant = $etudiant;
+    
+        return $this;
+    }
+
+    /**
+     * Get etudiant
+     *
+     * @return \webStudent\EtudiantBundle\Entity\Etudiant 
+     */
+    public function getEtudiant()
+    {
+        return $this->etudiant;
+    }
+}
