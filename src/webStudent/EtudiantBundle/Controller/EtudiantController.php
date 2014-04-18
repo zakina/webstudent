@@ -19,6 +19,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class EtudiantController extends Controller
 {
+    
+
+
+	// je rajoute juste des commentaires ici pour tester git
+
+
     public function indexAction()
     {
         //return new Response("Salut tout le monde, lebes ?");
