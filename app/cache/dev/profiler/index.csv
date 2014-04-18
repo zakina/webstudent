@@ -877,3 +877,4 @@ e4945a,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/etudiant/consulter
 807e87,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/etudiant/consulterAvecStages/1,1395917083,
 848408,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/etudiant/consulterAvecStages/1,1395917083,
 c4eb05,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/etudiant/consulter/1,1397816922,
+3029b4,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/etudiant/consulter/1,1397823429,

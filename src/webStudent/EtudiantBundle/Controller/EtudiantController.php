@@ -19,12 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class EtudiantController extends Controller
 {
-    
-
-
-	// je rajoute juste des commentaires ici pour tester git
-
-
+   
     public function indexAction()
     {
         //return new Response("Salut tout le monde, lebes ?");
@@ -43,7 +38,7 @@ class EtudiantController extends Controller
 	if ($stages instanceof \Doctrine\Common\Collections\Collection) 
 	{
 		echo "This will always be true!";
-		var_dump ($stages);
+		//var_dump ($stages);
 	}
  
           /*foreach ($stages->toArray() as $stage)
